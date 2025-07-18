@@ -48,7 +48,7 @@
               _FPLC = ["_fplc", btoa(value).replace(/=/g, '.')].join('*');
             } else {
               if (name.match(/^_ga/)) {
-                value = value.match(/G[A-Z][1-9]\.[0-9]\.(.+)/)[1];
+                value = value.match(/G[A-Z][1-9]+\.[0-9]\.(.+)/)[1];
                 console.log(name, value);
                 cookies.push([name, btoa(value).replace(/=/g, '.')].join('*'));
               }
