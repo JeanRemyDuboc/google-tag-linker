@@ -34,7 +34,6 @@ var googleTagLinker = (function () {
       // Google Analytics 4 Session Cookie
       /^FPLC$/ // First Party Linker Cookie > sGTM
       ];
-
       var _FPLC = undefined;
       ('; ' + document.cookie).split('; ').forEach(function (ck) {
         var name = ck.split("=")[0];
@@ -46,7 +45,7 @@ var googleTagLinker = (function () {
               _FPLC = ["_fplc", btoa(value).replace(/=/g, '.')].join('*');
             } else {
               if (name.match(/^_ga/)) {
-                value = value.match(/G[A-Z]1\.[0-9]\.(.+)/)[1];
+                value = value.match(/G[A-Z][1-9]\.[0-9]\.(.+)/)[1];
                 console.log(name, value);
                 cookies.push([name, btoa(value).replace(/=/g, '.')].join('*'));
               }
